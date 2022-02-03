@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Quicksand:wght@500&display=swap');
+$font-stack: 'Poppins',
+sans-serif;
+$backdrop-background_color:rgba(21, 12, 33, 0.81);
+$btn_background-color : #1207AB;
+$text-color:#423A4B;
+$alt-text-color:white;
+$label-color:rgba(3, 3, 3, 0.5);
+$font-size :18vh;
+$border-color:#DFDFDF;
+$input-bg-color:#Fff;
+
+@mixin flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin btn {
+    background: none;
+    border-radius: 5px;
+    border: 1px solid #423A4B;
+    width: 45%;
+    height: 6vh;
+    cursor: pointer;
+    white-space: nowrap;
+    font-size: 10px;
+}
+
+@mixin btn2 {
+    @include btn();
+    width: 40%;
+    font-size: 16px;
+}
+
+@mixin form {
+    @include flex2();
+    width: 90%;
+    margin-top: 1em;
+}
+
+@mixin form2 {
+    @include form();
+    width: 70%;
+}
+
+@mixin label {
+    font: {
+        size: 14px;
+        weight: 900;
+    }
+
+    line-height: 1.8;
+    color: $label-color;
+    display: block;
+}
+
+@mixin input {
+    box-sizing: border-box;
+    margin-bottom: 1.5em;
+    background-color: $input-bg-color;
+    border: 1px solid #A9A9A9;
+    box-sizing: border-box;
+    padding: 0 5px 0 5px;
+    border-radius: 5px;
+    min-height: 45px;
+    max-height: 30px;
+    width: 100%;
+    max-width: 100%;
+}
+
+@mixin input2 {
+    @include input();
+    padding: 10px;
+}
+
+@mixin continue_btn {
+    @include btn();
+    @include active-btn();
+    border: none;
+    width: 100%;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 5px;
+    margin-top: 1em;
+    min-height: 45px;
+    max-height: 40px;
+}
+
+@mixin continue_btn2 {
+    @include btn2();
+    @include continue_btn();
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+html {
+    font: {
+        family: $font-stack;
+    }
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    overflow: auto;
+    box-sizing: border-box;
+    text-decoration: none;
+    min-height: 100vh;
+    width: 100%;
+    color: $text-color;
+    list-style-type: none;
+}
+header{
+    @include flex();
+    justify-content: space-evenly;
+    padding: 1em 0;
+    a{
+        text-decoration: none;
+        color: $text-color;
+        font-weight: 900;
+    }
+    img{
+        border-radius: 100%;
+    }
+}
+section{
+    @include flex();
+    flex-direction: column;
+    border-top: 1px solid #A9A9A9;
+    min-width: 100%;
+    padding: 1em;
+    div{
+        min-width: 100%;
+    }
+    .carddiv{
+        h3{
+            font-weight: 900;
+        }
+        p{
+            padding: 0.5em 0 1em 0;
+            font-weight: lighter;
+            font-size: 10px;
+            opacity: 0.4;
+        }
+        img{
+            min-width: 60%;
+            max-width: 100%;
+        }
+    }
+    .formDiv{
+        .cardTypes{
+            @include flex();
+            @include flex();
+            justify-content: space-between;
+            margin-top: 1em;
+        }
+        form{
+
+        }
+    }
+}
+@media screen and (min-width:800px) {
+    header{
+        justify-content: flex-end;
+        padding: 1em;
+        nav{
+            @include flex();
+            justify-content: space-evenly;
+            min-width: 60%;
+        }
+        img{
+            justify-self: flex-end;
+            align-self: flex-end;
+        }
+    }
+    section{
+        .carddiv{
+            min-width: 50%;
+        }
+    }
+}
