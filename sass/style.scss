@@ -195,12 +195,23 @@ section{
     }
 }
 table{
-    flex-direction: column;
     border-top: 1px solid #A9A9A9;
     min-width: 100%;
-    padding: 1em;
-    
+    padding: 2em 1em;
+    tr{
+        padding:  1em 0;
+        td{
+            &:last-child{
+                text-align: right;
+            }
+            button{
+                @include btn();
+                min-width: 10%;
+            }
+        }
+    }
 }
+
 @media screen and (min-width:800px) {
     header{
         justify-content: flex-end;

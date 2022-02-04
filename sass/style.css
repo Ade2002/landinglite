@@ -179,13 +179,30 @@ section .formDiv form button {
 }
 
 table {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   border-top: 1px solid #A9A9A9;
   min-width: 100%;
-  padding: 1em;
+  padding: 2em 1em;
+}
+
+table tr {
+  padding: 1em 0;
+}
+
+table tr td:last-child {
+  text-align: right;
+}
+
+table tr td button {
+  background: #0079c1;
+  border-radius: 5px;
+  border: 1px solid #0079c1;
+  padding: 1em 2em;
+  min-width: 100%;
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 14px;
+  color: white;
+  min-width: 10%;
 }
 
 @media screen and (min-width: 800px) {
