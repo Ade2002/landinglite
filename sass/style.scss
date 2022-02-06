@@ -122,89 +122,151 @@ body {
     color: $text-color;
     list-style-type: none;
 }
-header{
+
+header {
     @include flex();
     justify-content: space-evenly;
     padding: 1em 0;
-    a{
+
+    a {
         text-decoration: none;
         color: $text-color;
         font-weight: 900;
     }
-    img{
+
+    img {
         border-radius: 100%;
     }
 }
-section{
+
+section {
     @include flex();
     flex-direction: column;
     border-top: 1px solid #A9A9A9;
     min-width: 100%;
     padding: 1em;
-    div{
+
+    div {
         min-width: 100%;
     }
-    .carddiv{
-        h3{
+
+    .carddiv {
+        h3 {
             font-weight: 900;
         }
-        p{
+
+        p {
             padding: 0.5em 0 0 0;
             font-weight: lighter;
             font-size: 10px;
             opacity: 0.4;
         }
-        img{
+
+        img {
             min-width: 100%;
             max-width: 100%;
             margin-top: 1em;
         }
+        .card {
+            /* background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05));
+            box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5) -1px -1px 2px #aaa, 1px 1px 2px #555;
+            backdrop-filter: blur(0.8rem);
+            border-radius: 1rem; */
+            background-image: linear-gradient(to right , #ff4f84  20%, #844fff  );
+            @include flex() ;
+            flex-direction: column;
+            min-width: 100%;
+            padding: 1.5rem;
+            h1{
+                align-self: flex-start;
+            }
+            .chip-input{
+                @include flex();
+                justify-content: space-between;
+                width: 100%;
+                margin: 1em 0;
+                &:last-child {
+                    align-items: flex-start;
+                    justify-content: flex-start;
+                }
+                span{
+                    p{
+                        border-bottom: 2px dashed white;
+                        font-size: 18px;
+                       
+                    }
+                }
+            }
+            span{
+                color:white;
+                .card_chip {
+                    img {
+                        min-width: 3rem;
+                        max-width: 3rem;
+                        margin: 0;
+                    }
+                }
+            }
+        }
+
     }
-    .formDiv{
-        .cardTypes{
+
+    .formDiv {
+        .cardTypes {
             @include flex();
             justify-content: space-between;
             margin-top: 1em;
         }
-        form{
+
+        form {
             @include flex();
             justify-content: flex-start;
             flex-wrap: wrap;
             max-width: 100%;
             margin-top: 1em;
-            span{
+
+            span {
                 min-width: 100%;
-                label{
+
+                label {
                     @include label();
                 }
-                .form-control{
+
+                .form-control {
                     @include input();
                 }
             }
-            .form-radio{
+
+            .form-radio {
                 @include flex();
                 margin-bottom: 1em;
-                .input-radio{
+
+                .input-radio {
                     margin-right: 0.5em;
                 }
             }
-            button{
+
+            button {
                 @include btn();
             }
         }
     }
 }
-table{
+
+table {
     border-top: 1px solid #A9A9A9;
     min-width: 100%;
     padding: 2em 1em;
-    tr{
-        padding:  1em 0;
-        td{
-            &:last-child{
+
+    tr {
+        padding: 1em 0;
+
+        td {
+            &:last-child {
                 text-align: right;
             }
-            button{
+
+            button {
                 @include btn();
                 min-width: 10%;
             }
@@ -212,45 +274,73 @@ table{
     }
 }
 
+.modal {
+    animation: modal 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes modal {
+    from {
+        transform: translateY(100vh);
+        opacity: 0.1;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
 @media screen and (min-width:800px) {
-    header{
+    header {
         justify-content: flex-end;
         padding: 1em;
-        nav{
+
+        nav {
             @include flex();
             justify-content: space-evenly;
             min-width: 60%;
         }
-        img{
+
+        img {
             justify-self: flex-end;
             align-self: flex-end;
         }
     }
-    section{
+
+    section {
         flex-direction: row;
-        .carddiv{
+
+        .carddiv {
             min-width: 50%;
-            img{
+
+            img {
                 min-width: 60%;
             }
         }
-        .formDiv{
+
+        .formDiv {
             min-width: 50%;
-            .cardTypes{
+
+            .cardTypes {
                 justify-content: flex-end;
                 align-items: flex-end;
-                img{
+
+                img {
                     margin: 0 1em;
                 }
             }
-            form{
+
+            form {
                 justify-content: space-between;
-                span{
+
+                span {
                     min-width: 48%;
-                    label{
+
+                    label {
                         @include label();
                     }
-                    .form-control{
+
+                    .form-control {
                         @include input();
                     }
                 }

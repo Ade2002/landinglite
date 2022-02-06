@@ -87,6 +87,76 @@ section .carddiv img {
   margin-top: 1em;
 }
 
+section .carddiv .card {
+  /* background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05));
+            box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5) -1px -1px 2px #aaa, 1px 1px 2px #555;
+            backdrop-filter: blur(0.8rem);
+            border-radius: 1rem; */
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(20%, #ff4f84), to(#844fff));
+  background-image: linear-gradient(to right, #ff4f84 20%, #844fff);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-width: 100%;
+  padding: 1.5rem;
+}
+
+section .carddiv .card h1 {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
+section .carddiv .card .chip-input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  margin: 1em 0;
+}
+
+section .carddiv .card .chip-input:last-child {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+section .carddiv .card .chip-input span p {
+  border-bottom: 2px dashed white;
+  font-size: 18px;
+}
+
+section .carddiv .card span {
+  color: white;
+}
+
+section .carddiv .card span .card_chip img {
+  min-width: 3rem;
+  max-width: 3rem;
+  margin: 0;
+}
+
 section .formDiv .cardTypes {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -203,6 +273,37 @@ table tr td button {
   font-size: 14px;
   color: white;
   min-width: 10%;
+}
+
+.modal {
+  -webkit-animation: modal 1s cubic-bezier(0.16, 1, 0.3, 1);
+          animation: modal 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@-webkit-keyframes modal {
+  from {
+    -webkit-transform: translateY(100vh);
+            transform: translateY(100vh);
+    opacity: 0.1;
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes modal {
+  from {
+    -webkit-transform: translateY(100vh);
+            transform: translateY(100vh);
+    opacity: 0.1;
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 @media screen and (min-width: 800px) {
