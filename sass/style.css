@@ -89,9 +89,7 @@ section .carddiv img {
 
 section .carddiv .card {
   /* background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05));
-            box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5) -1px -1px 2px #aaa, 1px 1px 2px #555;
-            backdrop-filter: blur(0.8rem);
-            border-radius: 1rem; */
+            */
   background-image: -webkit-gradient(linear, left top, right top, color-stop(20%, #ff4f84), to(#844fff));
   background-image: linear-gradient(to right, #ff4f84 20%, #844fff);
   display: -webkit-box;
@@ -103,17 +101,29 @@ section .carddiv .card {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5) -1px -1px 2px #aaa, 1px 1px 2px #555;
+          box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5) -1px -1px 2px #aaa, 1px 1px 2px #555;
+  -webkit-backdrop-filter: blur(0.8rem);
+          backdrop-filter: blur(0.8rem);
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
   min-width: 100%;
   padding: 1.5rem;
+  border-radius: 1rem;
+  max-width: 50px;
+  margin-top: 1rem;
+  -webkit-animation: 1s cubic-bezier(0.16, 1, 0.3, 1) cardEnter;
+          animation: 1s cubic-bezier(0.16, 1, 0.3, 1) cardEnter;
 }
 
 section .carddiv .card h1 {
   -ms-flex-item-align: start;
       align-self: flex-start;
+  color: #1d005f;
+  margin: 1rem 0 1.5rem;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
 }
 
 section .carddiv .card .chip-input {
@@ -137,24 +147,77 @@ section .carddiv .card .chip-input:last-child {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
 }
 
 section .carddiv .card .chip-input span p {
-  border-bottom: 2px dashed white;
-  font-size: 18px;
+  border-bottom: 0.2rem dashed rgba(255, 255, 255, 0.15);
+  font-size: 1.2rem;
+  color: white;
+}
+
+section .carddiv .card .chip-input span p:active {
+  border-color: white;
+}
+
+section .carddiv .card .chip-input .card_number {
+  min-width: 70%;
+}
+
+section .carddiv .card .chip-input .card_expiry {
+  width: 45%;
+}
+
+section .carddiv .card .chip-input .card_expiry p {
+  font-size: 0.8rem;
+}
+
+section .carddiv .card .chip-input .card_cvv {
+  width: 45%;
+}
+
+section .carddiv .card .chip-input .card_cvv p {
+  font-size: 0.8rem;
 }
 
 section .carddiv .card span {
   color: white;
 }
 
+section .carddiv .card span .card_chip {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
 section .carddiv .card span .card_chip img {
   min-width: 3rem;
   max-width: 3rem;
   margin: 0;
+}
+
+@-webkit-keyframes cardEnter {
+  from {
+    -webkit-transform: translateX(100vh);
+            transform: translateX(100vh);
+    opacity: 0.1;
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes cardEnter {
+  from {
+    -webkit-transform: translateX(100vh);
+            transform: translateX(100vh);
+    opacity: 0.1;
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 section .formDiv .cardTypes {
@@ -209,7 +272,7 @@ section .formDiv form span .form-control {
           box-sizing: border-box;
   margin-bottom: 1.5em;
   background-color: #dad8d8;
-  border: 1px solid #A9A9A9;
+  border: 2px solid #A9A9A9;
   box-sizing: border-box;
   padding: 0 5px 0 5px;
   border-radius: 5px;
@@ -217,6 +280,12 @@ section .formDiv form span .form-control {
   max-height: 30px;
   width: 100%;
   max-width: 100%;
+  color: black;
+}
+
+section .formDiv form span .form-control:focus {
+  outline: none;
+  border-color: #0079c1;
 }
 
 section .formDiv form .form-radio {
@@ -275,37 +344,6 @@ table tr td button {
   min-width: 10%;
 }
 
-.modal {
-  -webkit-animation: modal 1s cubic-bezier(0.16, 1, 0.3, 1);
-          animation: modal 1s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-@-webkit-keyframes modal {
-  from {
-    -webkit-transform: translateY(100vh);
-            transform: translateY(100vh);
-    opacity: 0.1;
-  }
-  to {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes modal {
-  from {
-    -webkit-transform: translateY(100vh);
-            transform: translateY(100vh);
-    opacity: 0.1;
-  }
-  to {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-    opacity: 1;
-  }
-}
-
 @media screen and (min-width: 800px) {
   header {
     -webkit-box-pack: end;
@@ -341,6 +379,9 @@ table tr td button {
   }
   section .carddiv {
     min-width: 50%;
+  }
+  section .carddiv .card {
+    min-width: 80%;
   }
   section .carddiv img {
     min-width: 60%;
@@ -379,7 +420,7 @@ table tr td button {
             box-sizing: border-box;
     margin-bottom: 1.5em;
     background-color: #dad8d8;
-    border: 1px solid #A9A9A9;
+    border: 2px solid #A9A9A9;
     box-sizing: border-box;
     padding: 0 5px 0 5px;
     border-radius: 5px;
@@ -387,6 +428,11 @@ table tr td button {
     max-height: 30px;
     width: 100%;
     max-width: 100%;
+    color: black;
+  }
+  section .formDiv form span .form-control:focus {
+    outline: none;
+    border-color: #0079c1;
   }
 }
 /*# sourceMappingURL=style.css.map */
