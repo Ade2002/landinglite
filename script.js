@@ -22,4 +22,14 @@ const updatecvvParapraph = () => {
 }
 cvvinput.addEventListener('input', updatecvvParapraph)
 expiryinput.addEventListener('input', updateccexpiryParapraph)
-numberinput.addEventListener('input', updateccNumberPara)
+numberinput.addEventListener('input', updateccNumberPara);
+
+
+const cleaveCC = new cleave('#postalCode', {
+     creditCard: true,
+     delimeter: '',
+     onCreditCardTypeChanged: function (type) {
+          console.log(type);
+     }
+})
+console.log(cleave)
