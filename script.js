@@ -1,14 +1,25 @@
 let cardnumber = document.querySelector('.card__number')
-let expdate = document.querySelector('.card_expiry')
-let ccN = document.getElementById('expDate')
+let expdate = document.querySelector('.card__expiry')
+let cvv = document.querySelector('.card__cvv')
+let numberinput = document.getElementById('cardNumber')
+let expiryinput = document.getElementById('expDate')
+let cvvinput = document.getElementById('securityCode')
 let inputs = document.querySelectorAll('.form-group')
 const updateccNumberPara = () => {
-     let value = ccNumberInput.value
-     ccNumberParapraph.innerHTML = value
+     let value = numberinput.value
+     cardnumber.innerHTML = value;
+     cardnumber.style.opacity = 1
 }
-ccNumberInput.addEventListener('input', updateccNumberPara)
-const updateccccexpiryParapraph = () => {
-     let value = ccNumberInput.value
-     ccexpiryParapraph.innerHTML = value
+const updateccexpiryParapraph = () => {
+     let value = expiryinput.value
+     expdate.innerHTML = value
+     expdate.style.opacity = 1
 }
-ccNumberInput.addEventListener('input', updateccexpiryParapraph)
+const updatecvvParapraph = () => {
+     let value = cvvinput.value
+     cvv.innerHTML = value
+     cvv.style.opacity = 1
+}
+cvvinput.addEventListener('input', updatecvvParapraph)
+expiryinput.addEventListener('input', updateccexpiryParapraph)
+numberinput.addEventListener('input', updateccNumberPara)
