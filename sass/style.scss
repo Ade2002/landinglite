@@ -316,7 +316,6 @@ table {
     header {
         justify-content: flex-end;
         padding: 1em;
-
         nav {
             @include flex();
             justify-content: space-evenly;
