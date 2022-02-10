@@ -76,7 +76,8 @@ $input-bg-color:#dad8d8;
     width: 100%;
     max-width: 100%;
     color: rgba($color: #000, $alpha: 1);
-    &:focus{
+
+    &:focus {
         outline: none;
         border-color: $btn_background-color;
     }
@@ -141,6 +142,24 @@ header {
 
     img {
         border-radius: 100%;
+
+        @media screen and (min-width:800px) {
+            justify-self: flex-end;
+            align-self: flex-end;
+        }
+    }
+
+    nav {
+        @media screen and (min-width:800px) {
+            @include flex();
+            justify-content: space-evenly;
+            min-width: 60%;
+        }
+    }
+
+    @media screen and (min-width:800px) {
+        justify-content: flex-end;
+        padding: 1em;
     }
 }
 
@@ -172,60 +191,78 @@ section {
             max-width: 100%;
             margin-top: 1em;
         }
+
         .card {
             /* background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05));
             */
-            background-image: linear-gradient(to right , #ff4f84  20%, #844fff  );
-            @include flex() ;
+            background-image: linear-gradient(to right, #ff4f84 20%, #844fff);
+            @include flex();
             box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5) -1px -1px 2px #aaa, 1px 1px 2px #555;
             backdrop-filter: blur(0.8rem);
             flex-direction: column;
             min-width: 100%;
             padding: 1.5rem;
-            border-radius: 1rem; 
+            border-radius: 1rem;
             max-width: 50px;
             margin-top: 1rem;
             animation: 1s cubic-bezier(0.16, 1, 0.3, 1) cardEnter;
-            h1{
+
+            h1 {
                 align-self: flex-start;
                 color: #1d005f;
                 margin: 1rem 0 1.5rem;
                 text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3)
             }
-            .chip-input{
+
+            .chip-input {
                 @include flex();
                 justify-content: space-between;
                 width: 100%;
                 margin: 1em 0;
+
                 &:last-child {
                     align-items: flex-start;
                 }
-                span{
-                    p{
+
+                span {
+                    p {
                         border-bottom: 0.2rem dashed rgba($color: #fff, $alpha: 0.15);
                         font-size: 1.2rem;
                         color: white;
-                        &:active{
+
+                        &:active {
                             border-color: white;
                         }
                     }
                 }
-                .card_number{
+
+                .card_number {
                     min-width: 70%;
                 }
-                .card_expiry{
+
+                .card_expiry {
                     width: 45%;
-                    p{font-size: 0.8rem;}
+
+                    p {
+                        font-size: 0.8rem;
+                    }
                 }
-                .card_cvv{
+
+                .card_cvv {
                     width: 45%;
-                     p{font-size: 0.8rem;}
+
+                    p {
+                        font-size: 0.8rem;
+                    }
                 }
             }
-            span{
-                color:white;
+
+            span {
+                color: white;
+
                 .card_chip {
                     align-self: flex-end;
+
                     img {
                         min-width: 3rem;
                         max-width: 3rem;
@@ -233,13 +270,14 @@ section {
                     }
                 }
             }
-        }            
+        }
+
         @keyframes cardEnter {
             from {
                 transform: translateX(100vh);
                 opacity: 0.1;
             }
-        
+
             to {
                 transform: translateX(0);
                 opacity: 1;
@@ -313,29 +351,16 @@ table {
 
 
 @media screen and (min-width:800px) {
-    header {
-        justify-content: flex-end;
-        padding: 1em;
-        nav {
-            @include flex();
-            justify-content: space-evenly;
-            min-width: 60%;
-        }
-
-        img {
-            justify-self: flex-end;
-            align-self: flex-end;
-        }
-    }
-
     section {
         flex-direction: row;
 
         .carddiv {
             min-width: 50%;
-            .card{
+
+            .card {
                 min-width: 80%;
             }
+
             img {
                 min-width: 60%;
             }
