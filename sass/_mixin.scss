@@ -1,0 +1,94 @@
+@mixin flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin btn {
+    background: $btn_background-color;
+    border-radius: 5px;
+    border: 1px solid $btn_background-color;
+    padding: 1em 2em;
+    min-width: 100%;
+    cursor: pointer;
+    white-space: nowrap;
+    font-size: 14px;
+    color: white;
+}
+
+@mixin btn2 {
+    @include btn();
+    width: 40%;
+    font-size: 16px;
+}
+
+@mixin form {
+    @include flex2();
+    width: 90%;
+    margin-top: 1em;
+}
+
+@mixin form2 {
+    @include form();
+    width: 70%;
+}
+
+@mixin label {
+    font: {
+        size: 14px;
+        weight: 900;
+    }
+
+    line-height: 1.8;
+    color: $label-color;
+    display: block;
+}
+
+@mixin input {
+    box-sizing: border-box;
+    margin-bottom: 1.5em;
+    background-color: $input-bg-color;
+    border: 2px solid #A9A9A9;
+    box-sizing: border-box;
+    padding: 0 5px 0 5px;
+    border-radius: 5px;
+    min-height: 45px;
+    max-height: 30px;
+    width: 100%;
+    max-width: 100%;
+    color: rgba($color: #000, $alpha: 1);
+    &:focus {
+        outline: none;
+        border-color: $btn_background-color;
+    }
+}
+
+@mixin input2 {
+    @include input();
+    padding: 10px;
+}
+
+@mixin continue_btn {
+    @include btn();
+    @include active-btn();
+    border: none;
+    width: 100%;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 5px;
+    margin-top: 1em;
+    min-height: 45px;
+    max-height: 40px;
+}
+
+@mixin continue_btn2 {
+    @include btn2();
+    @include continue_btn();
+}

@@ -323,6 +323,11 @@ section .formDiv form span .form-control:focus {
   border-color: #0079c1;
 }
 
+section .formDiv form span .form-control[type=number] {
+  -moz-appearance: textfield;
+  -webkit-appearance: none;
+}
+
 section .formDiv form .form-radio {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -416,32 +421,6 @@ table tr td button {
   }
   section .formDiv form span {
     min-width: 48%;
-  }
-  section .formDiv form span label {
-    font-size: 14px;
-    font-weight: 900;
-    line-height: 1.8;
-    color: rgba(3, 3, 3, 0.5);
-    display: block;
-  }
-  section .formDiv form span .form-control {
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    margin-bottom: 1.5em;
-    background-color: #dad8d8;
-    border: 2px solid #A9A9A9;
-    box-sizing: border-box;
-    padding: 0 5px 0 5px;
-    border-radius: 5px;
-    min-height: 45px;
-    max-height: 30px;
-    width: 100%;
-    max-width: 100%;
-    color: black;
-  }
-  section .formDiv form span .form-control:focus {
-    outline: none;
-    border-color: #0079c1;
   }
 }
 /*# sourceMappingURL=style.css.map */

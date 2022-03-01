@@ -24,11 +24,11 @@ cvvinput.addEventListener('input', updatecvvParapraph)
 expiryinput.addEventListener('input', updateccexpiryParapraph)
 numberinput.addEventListener('input', updateccNumberPara);
 
-const cleave = new Cleave('.cardNumberinput', {
+/* const cleave = new Cleave('.cardNumberinput', {
      creditCard: true,
      delimeter: '',
      onCreditCardTypeChanged: function (type) {
-         console.log(type);
+          console.log(type);
      }
- })
-console.log(Cleave);
+})
+console.log(Cleave); */
