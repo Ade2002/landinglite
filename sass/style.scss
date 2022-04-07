@@ -18,6 +18,7 @@ header {
 
     img {
         border-radius: 100%;
+
         @media screen and (min-width:800px) {
             justify-self: flex-end;
             align-self: flex-end;
@@ -77,7 +78,6 @@ section {
             flex-direction: column;
             min-width: 100%;
             padding: 1.5rem;
-            
             border-radius: 1rem;
             max-width: 50px;
             margin-top: 1rem;
@@ -138,6 +138,7 @@ section {
 
                 .card_chip {
                     align-self: flex-end;
+
                     img {
                         min-width: 3rem;
                         max-width: 3rem;
@@ -183,6 +184,7 @@ section {
 
                 .form-control {
                     @include input();
+
                     &[type=number] {
                         -moz-appearance: textfield;
                         -webkit-appearance: none;
